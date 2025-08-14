@@ -142,17 +142,17 @@ std::pair<std::vector<double>, std::string> Database::nearestNeighbor(
     return {nearest.getCoordinates(), nearest.getValue()};
 }
 
+
 std::vector<std::pair<std::vector<double>, std::string>> Database::kNearestNeighbors(
     const std::vector<double>& target, int k) const {
-    
     if (target.size() != dimensions) {
         throw std::invalid_argument("Target dimensions do not match database dimensions");
     }
-    
-    // Note: This would require implementing k-nearest neighbors in KDTree
-    // For now, return just the nearest neighbor
+    std::vector<Point> points = tree.kNearestNeighbors(target, k);
     std::vector<std::pair<std::vector<double>, std::string>> results;
-    results.push_back(nearestNeighbor(target));
+    for (const Point& p : points) {
+        results.emplace_back(p.getCoordinates(), p.getValue());
+    }
     return results;
 }
 
