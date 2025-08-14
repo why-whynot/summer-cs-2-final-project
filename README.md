@@ -1,10 +1,7 @@
 # Mini Database with K-D Tree
 
 ## Overview
-This project implements a mini database using K-D tree (k-dimensional tree) for efficient storage and retrieval of multi-dimensional data like coordinates. The implementation supports CRUD operations (Create, Read, Update, Delete) and provides efficient range queries and nearest neighbor searches.
-
-## Link to the walkthrough
-
+This project implements a mini database using K-D tree (k-dimensional tree) for efficient storage and retrieval of multi-dimensional data. The implementation supports CRUD operations (Create, Read, Update, Delete) and provides efficient range queries and nearest neighbor searches.
 
 ## Features
 - **Multi-dimensional data storage**: Supports any number of dimensions
